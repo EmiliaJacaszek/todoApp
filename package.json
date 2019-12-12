@@ -1,7 +1,7 @@
 {
-  "name": "todoApp",
+  "name": "todoapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "todo app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,13 +11,16 @@
     "url": "git+https://github.com/EmiliaJacaszek/todoApp.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Aldona Tomzik",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/EmiliaJacaszek/todoApp/issues"
   },
   "homepage": "https://github.com/EmiliaJacaszek/todoApp#readme",
   "dependencies": {
+    "config": "^3.2.4",
+    "express": "^4.17.1",
+    "mongodb": "^3.4.0",
     "mongoose": "^5.7.14"
   }
 }
