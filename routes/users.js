@@ -40,4 +40,8 @@ router.post('/', async (req, res) => {
     }).send(_.pick(user, ['_id', 'name', 'email']));
 });
 
+router.get('/logout', async (req, res) => {
+    res.clearCookie('token').redirect('/');
+})
+
 module.exports = router;
