@@ -31,9 +31,13 @@ router.post('/', async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(user.password, salt);
     await user.save();
-
+    const expiration = 60 * 60 * 1000;
     const token = user.generateAuthToken();
-    res.header('x-auth-token', token).send(_.pick(user, ['_id', 'name', 'email']));
+    return res.cookie('token', token, {
+        expires: new Date(Date.now() + expiration),
+        secure: false,
+        httpOnly: false
+    }).send(_.pick(user, ['_id', 'name', 'email']));
 });
 
 module.exports = router;

@@ -14,6 +14,7 @@ router.post('/', async (req, res) => {
     } = validate(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
+    // return res.status(400).send(req.body);
     let user = await User.findOne({
         email: req.body.email
     });
@@ -21,9 +22,15 @@ router.post('/', async (req, res) => {
 
     const validPassword = await bcrypt.compare(req.body.password, user.password);
     if (!validPassword) return res.status(400).send('Invalid email or password.');
-
+    const expiration = 60 * 60 * 1000;
     const token = user.generateAuthToken();
-    res.send(token);
+
+    res.cookie('token', token, {
+        expires: new Date(Date.now() + expiration),
+        secure: false,
+        httpOnly: false
+    }).redirect('/api/users/me');
+
 });
 
 function validate(req) {
