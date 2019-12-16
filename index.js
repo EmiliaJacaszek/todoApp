@@ -14,9 +14,11 @@ if (!config.get('jwtPrivateKey')) {
     process.exit(1);
 }
 
-mongoose.connect('mongodb://localhost/todoapp', {
+// CONNECT TO DB
+mongoose.connect(process.env.DB_CONNECT, {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useFindAndModify: false
     })
     .then(() => console.log('Connected to MongoDB...'))
     .catch(err => console.error('Could not connect to MongoDB', err));
@@ -24,17 +26,21 @@ mongoose.connect('mongodb://localhost/todoapp', {
 const app = express();
 
 
+// APP SET/USE
+app.set('view engine', 'ejs');
+
+app.use(express.static('public'))
+
 app.use(
     bodyParser.urlencoded({
         extended: true
     })
 );
+
 app.use(cookieParser());
 app.use(bodyParser.json());
-
-app.set('view engine', 'ejs');
-
 app.use(express.json());
+app.use('/api/todo-list', todo_list);
 app.use('/api/users', users);
 app.use('/api/auth', auth);
 app.use('/', home);
