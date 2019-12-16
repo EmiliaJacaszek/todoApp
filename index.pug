@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title #{title}
+    link(rel='stylesheet', href='/css/style.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet")
+  body
+    main
+        block header
+            header.header
+                h1 #{title}
+
+        block content
+            .container
+                div#title What is your next task?
+
+                form(method='POST' action='/add')
+                    div.form-group
+                        input(type='text' name='description')
+                        button(type='submit') Add
+
+        block todos-container
+            div.todos-container
+                each todo in todos
+                    div.todo #{todo.id} ==== #{todo.desc}
