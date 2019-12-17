@@ -1,97 +1,132 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: #e27442;
+  background: #e27442;
 }
 
 .todo-container {
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    padding: 20px;
-    width: 600px;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  width: 600px;
+  transform: translate(-50%, -50%);
+  background: rgba(122, 91, 91, 0.1);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .todo {
-    width: 400px;
+  width: 400px;
 }
 
 .todo-container h2 {
-    padding: 10px;
-    font-size: 2em;
+  padding: 10px;
+  font-size: 2em;
 }
 
 .todo-header input {
-    width: 92%;
-    border: none;
-    border-radius: 5px;
-    height: 20px;
+  width: 92%;
+  border: none;
+  border-radius: 5px;
+  height: 20px;
 }
 
 .todo-header button {
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    padding: 5px;
-    background-color: rgb(51, 212, 100);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 5px;
+  background-color: rgb(51, 212, 100);
 }
 
 .todo-container ul {
-    list-style: none;
+  list-style: none;
 }
 
 .todo-list-item {
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 5px;
-    font-family: 'Candal', sans-serif;
-    background: rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: row;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Candal", sans-serif;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: row;
 }
 
 .todo-list-item form {
-    width: 100%;
-    display: flex;
+  width: 100%;
+  display: flex;
 }
 
 .todo-list-item input {
-    flex-grow: 2;
-    margin-right: 20px;
-    border: none;
-    border-radius: 5px;
-    font-family: 'Candal', sans-serif;
+  flex-grow: 2;
+  margin-right: 20px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Candal", sans-serif;
 }
 
 .todo-list-item button {
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 5px;
-    margin-left: 10px;
-    font-family: 'Candal', sans-serif;
-    background-color: rgb(51, 212, 100);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 10px;
+  font-family: "Candal", sans-serif;
+  background-color: rgb(51, 212, 100);
 }
-
 
 .todo-list-item div {
-    flex-grow: 2;
+  flex-grow: 2;
 }
 
-.hidden-form{
-    display: none;
+.hidden-form {
+  display: none;
+}
+
+/*login register*/
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+.form-group input {
+  margin-left: 15px;
+}
+div.form-btn {
+  justify-content: center;
+}
+.msg {
+  margin: 20px;
+  padding: 10px;
+  color: red;
+  background-color: #fff;
+  border: solid 2px red;
+}
+nav {
+  background: rgba(122, 91, 91, 0.1);
+  width: 100%;
+  height: 35px;
+  color: white;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  line-height: 35px;
+  font-size: 16px;
+  position: absolute;
+  right: 20px;
 }

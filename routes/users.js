@@ -38,7 +38,7 @@ router.post("/", async (req, res) => {
       secure: false,
       httpOnly: false
     })
-    .send(_.pick(user, ["_id", "name", "email"]));
+    .redirect("/api/todo-list");
 });
 
 router.get("/logout", async (req, res) => {

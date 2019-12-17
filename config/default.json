@@ -1,5 +1,5 @@
 {
   "jwtPrivateKey": "",
   "cookieExpiration": 1,
-  "DB_CONNECT":"localhost/todoapp"
+  "DB_CONNECT": "mongodb://localhost/todoapp"
 }
