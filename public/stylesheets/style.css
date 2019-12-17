@@ -76,7 +76,8 @@ body {
   font-family: "Candal", sans-serif;
 }
 
-.todo-list-item button {
+.todo-list-item button,
+button {
   color: white;
   border: none;
   border-radius: 5px;
