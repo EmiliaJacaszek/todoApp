@@ -1,4 +1,5 @@
 {
   "jwtPrivateKey": "",
-  "cookieExpiration": 1
+  "cookieExpiration": 1,
+  "DB_CONNECT":"localhost/todoapp"
 }

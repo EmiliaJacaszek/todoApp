@@ -6,6 +6,7 @@ const auth = require('./routes/auth');
 const home = require('./routes/home');
 var cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const todo_list  = require('./routes/todo-list')
 
 
 
@@ -15,7 +16,7 @@ if (!config.get('jwtPrivateKey')) {
 }
 
 // CONNECT TO DB
-mongoose.connect(process.env.DB_CONNECT, {
+mongoose.connect("mongodb://localhost/todoapp", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false
